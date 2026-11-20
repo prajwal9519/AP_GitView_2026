@@ -1,0 +1,98 @@
+{
+  "Plan": {
+    "Node Type": "ModifyTable",
+    "Operation": "Update",
+    "Parallel Aware": false,
+    "Async Capable": false,
+    "Relation Name": "PreviewSessions",
+    "Schema": "public",
+    "Alias": "PreviewSessions",
+    "Startup Cost": 0.0,
+    "Total Cost": 1.04,
+    "Plan Rows": 1,
+    "Plan Width": 104,
+    "Actual Startup Time": 0.024,
+    "Actual Total Time": 0.025,
+    "Actual Rows": 1.0,
+    "Actual Loops": 1,
+    "Disabled": false,
+    "Output": [
+      "session_id",
+      "session_status",
+      "started_at",
+      "expires_at",
+      "preview_url"
+    ],
+    "Shared Hit Blocks": 4,
+    "Shared Read Blocks": 0,
+    "Shared Dirtied Blocks": 0,
+    "Shared Written Blocks": 0,
+    "Local Hit Blocks": 0,
+    "Local Read Blocks": 0,
+    "Local Dirtied Blocks": 0,
+    "Local Written Blocks": 0,
+    "Temp Read Blocks": 0,
+    "Temp Written Blocks": 0,
+    "Plans": [
+      {
+        "Node Type": "Seq Scan",
+        "Parent Relationship": "Outer",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "PreviewSessions",
+        "Schema": "public",
+        "Alias": "PreviewSessions",
+        "Startup Cost": 0.0,
+        "Total Cost": 1.04,
+        "Plan Rows": 1,
+        "Plan Width": 104,
+        "Actual Startup Time": 0.002,
+        "Actual Total Time": 0.002,
+        "Actual Rows": 1.0,
+        "Actual Loops": 1,
+        "Disabled": false,
+        "Output": [
+          "'running'::character varying(20)",
+          "'2026-11-20 23:41:15.185708+05:30'::timestamp with time zone",
+          "'https://preview.example.test/updated'::text",
+          "ctid"
+        ],
+        "Filter": "((\"PreviewSessions\".session_id = '4'::smallint) AND (\"PreviewSessions\".user_id = '6'::smallint))",
+        "Rows Removed by Filter": 2,
+        "Shared Hit Blocks": 1,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      }
+    ]
+  },
+  "Planning": {
+    "Shared Hit Blocks": 0,
+    "Shared Read Blocks": 0,
+    "Shared Dirtied Blocks": 0,
+    "Shared Written Blocks": 0,
+    "Local Hit Blocks": 0,
+    "Local Read Blocks": 0,
+    "Local Dirtied Blocks": 0,
+    "Local Written Blocks": 0,
+    "Temp Read Blocks": 0,
+    "Temp Written Blocks": 0
+  },
+  "Planning Time": 0.014,
+  "Triggers": [
+    {
+      "Trigger Name": "RI_ConstraintTrigger_c_36232",
+      "Constraint Name": "fk_preview_sessions_user_repository",
+      "Relation": "PreviewSessions",
+      "Time": 0.008,
+      "Calls": 1
+    }
+  ],
+  "Execution Time": 0.038
+}
